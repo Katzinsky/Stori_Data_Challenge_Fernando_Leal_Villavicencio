@@ -3,9 +3,12 @@
 
 ![](Aspose.Words.2c1ce8c9-367c-49a7-a759-9c397313cf11.001.png)![](Aspose.Words.2c1ce8c9-367c-49a7-a759-9c397313cf11.002.png)This problem consists of several characteristics to address given the questions raised in the subsequent points. In the first instance, when evaluating the provided documents, it is possible to appreciate that the format of the file does not match its name. Upon opening the Excel file containing the information, it generates a data corruption error. However, upon observing the composition of the dataset to work with, it is clearly seen that the data is separated by commas (Illustration 2). Therefore, instead of working on a method to separate each data into different columns, it is only necessary to change the file extension and it will automatically initialize with the corresponding format.
 
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 002](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/07ab04ec-cd55-469d-b8a7-8dcfe7dae5ca)
 
-*Ilustración 1 - Corrupted file*
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/07ab04ec-cd55-469d-b8a7-8dcfe7dae5ca" alt="Ilustración 1 - Corrupted file">
+</p>
+
+>Ilustración 1 - Corrupted file
 
 For this case study, Python was used for the processing and analysis of the data contained in the df.csv file using the Pandas and Matplotlib libraries.
 
@@ -28,17 +31,21 @@ As a first step, we can use Pandas to clean our data and prepare it for analysis
 
 To address these data problems, we can use built-in Pandas functions to efficiently clean them. Before starting the cleaning process, we can use the `info()` function to give us a snapshot of the data types in our DataFrame (Illustration 3) and systematically change the data to the appropriate data types.
 
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 003](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/d7b5790c-91fd-4a59-87bc-02313ec0849c)
 
-*Ilustración 2 - Command "Info()"*
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/d7b5790c-91fd-4a59-87bc-02313ec0849c" alt="">
+</p>
+
+>Ilustración 2 - Command "Info()"
 
 First, it's worth noting that the columns 'activated\_date' and 'last\_paid\_date' are currently labeled as type 'object', which is not optimal for representing dates. It would be appropriate to use the 'datetime' data type for these columns. To achieve this correction, we can apply the 'to\_datetime()' function to the DataFrame. After this modification, upon rechecking the data type of the columns, we should notice the change reflected clearly and accurately.
 
 
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/205469e7-4685-470e-9897-44c41473f289" alt="">
+</p>
 
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 005](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/205469e7-4685-470e-9897-44c41473f289)
-
-*Ilustración 3 - Command "to\_datetime()"*
+>Ilustración 3 - Command "to\_datetime()"
 
 
 
@@ -47,9 +54,12 @@ First, it's worth noting that the columns 'activated\_date' and 'last\_paid\_dat
 
 In the analysis conducted through the `info()` function, the presence of null values in our data has been identified, as shown in Illustration 3 when observing the "Non-Null Count" column. It is important to note that some columns have a different non-null count, indicating variability in the quantity of null values among them. To gain a more detailed insight into which columns and rows contain null values, we can employ the `isna()` function, although it is important to consider that the direct interpretation of these results can be complex. One strategy to simplify this information is to combine `isna()` with the `sum()` function, allowing us to more clearly visualize the number of null values for each column.
 
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 006](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/50437de7-466a-4ff1-a285-189f3bac86da)
 
-*Ilustración 4 - Command "isna().sum() "*
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/50437de7-466a-4ff1-a285-189f3bac86da" alt="">
+</p>
+
+>Ilustración 4 - Command "isna().sum() "
 
 In this type of scenario, we can handle missing data through two commonly used methods:
 
@@ -63,9 +73,11 @@ However, completely eliminating rows and columns with null values is often an in
 
 This type of graph shows the frequency of occurrence of a particular value in our dataset. It represents the frequency of each value, allowing us to visualize the distribution of those values. In question 1.1, we will assess the balances of all clients.
 
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 007](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/78eb70bd-14f3-484c-993b-cd0a345e17e7)
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/78eb70bd-14f3-484c-993b-cd0a345e17e7" alt="">
+</p>
 
-*Ilustración 5 - Balance amount for all the customers (Percentage)*
+>Ilustración 5 - Balance amount for all the customers (Percentage)
 
 ## Distribution of client balances:
 
@@ -78,9 +90,11 @@ Mean and median balance report, grouped by year and month of activation date.
 To carry out this procedure, we create two new columns: Year and Month, allowing us to perform the appropriate data grouping. Since we previously converted the data type to its corresponding format, there should be no inconvenience in creating the columns and performing the grouping according to the requested characteristics. Thus, upon executing the code, we obtain the following results (Illustration 7). It is worth noting that the treatment of null data has already been performed, thus posing no issue for analysis.
 
 
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 008](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/d535a12c-bb79-4d16-ae93-bb280a84fdd1)
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/d535a12c-bb79-4d16-ae93-bb280a84fdd1" alt="">
+</p>
 
-*Ilustración 6 - Mean and median balance, grouped by year and month of activated date.*
+>Ilustración 6 - Mean and median balance, grouped by year and month of activated date.
 
 According to the information, the following analysis can be conducted:
 
@@ -134,9 +148,11 @@ The approach taken to address this report using Python was through the following
    * report\_df.to\_excel('report\_customers\_2020.xlsx', index=False)
 
 
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 009](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/94894f15-58fe-402f-b2f5-2891d5300f22)
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/94894f15-58fe-402f-b2f5-2891d5300f22" alt="">
+</p>
 
-*Ilustración 7 - Report customers who activated their account and made their last payment during 2020*
+>Ilustración 7 - Report customers who activated their account and made their last payment during 2020
 
 ## Development of a Fraud Predictive Model
 
@@ -163,22 +179,26 @@ Classification Models for Predictive Analysis:
 ## Model Comparison for Prediction through Confusion Matrix.
 
 
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/543a60c6-32e2-4975-8041-7ade1bdd578f" alt="">
+</p>
 
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 010](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/543a60c6-32e2-4975-8041-7ade1bdd578f)
+>Ilustración 8 - Logistic regression - Accuracy: 0.9960
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/289c7d4d-2baf-45bc-a28d-ca1230b5808c" alt="">
+</p>
 
-*Ilustración 8 - Logistic regression - Accuracy: 0.9960*
+>Ilustración 9 - Decision Trees - Accuracy: 0.9928
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/7158f2a0-bb5a-4495-8ded-aa7775cef09d" alt="">
+</p>
 
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 011](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/289c7d4d-2baf-45bc-a28d-ca1230b5808c)
+>Ilustración 10 - Random Forests - Accuracy: 0.9952
+<p align="center">
+  <img src="https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/98a50a7e-8f6f-4750-8563-0c63e6516a21" alt="">
+</p>
 
-*Ilustración 9 - Decision Trees - Accuracy: 0.9928*
-
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 012](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/7158f2a0-bb5a-4495-8ded-aa7775cef09d)
-
-*Ilustración 10 - Random Forests - Accuracy: 0.9952*
-
-![Aspose Words 2c1ce8c9-367c-49a7-a759-9c397313cf11 013](https://github.com/Katzinsky/Stori_Data_Challenge_Fernando_Leal_Villavicencio/assets/156941290/98a50a7e-8f6f-4750-8563-0c63e6516a21)
-
-*Ilustración 11 - Support Vector Machines (SVM) - Accuracy: 0.9936*
+>Ilustración 11 - Support Vector Machines (SVM) - Accuracy: 0.9936
 
 
 
