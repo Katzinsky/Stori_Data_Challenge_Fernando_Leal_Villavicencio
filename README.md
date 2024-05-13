@@ -1,1 +1,0 @@
-# Stori_Data_Challenge_Fernando_Leal_Villavicencio
